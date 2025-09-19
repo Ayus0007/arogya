@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arogya — Ayurveda-Focused Nutrition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green: #A8BBA3;
+      --cream: #F7F4EA;
+      --beige: #EBD9D1;
+      --brown: #B87C4C;
+      --radius: 12px;
+      --maxwidth: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{font-family: 'Poppins',system-ui,Segoe UI,Roboto,Arial; margin:0; color:#2b2b2b; background:var(--cream);}
+    a{color:inherit; text-decoration:none}
+
+    .container{max-width:var(--maxwidth); margin:0 auto; padding:28px}
+
+    /* Header */
+    header{background:transparent; padding:16px 0}
+    .topbar{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:64px; height:64px; border-radius:10px; background:linear-gradient(180deg,var(--beige),var(--cream)); display:flex; align-items:center; justify-content:center; color:var(--brown); font-weight:700; font-size:18px;}
+    nav{display:flex; gap:20px; align-items:center}
+    nav a{color:var(--brown); font-weight:600}
+
+    /* Hero */
+    .hero{background:var(--green); border-radius:18px; padding:36px; color:var(--brown); margin:22px 0; display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+    .hero h1{font-size:34px; margin:0 0 12px}
+    .hero p{margin:0 0 20px; color:rgba(41,30,23,0.9)}
+    .cta{display:inline-flex; gap:12px; align-items:center}
+    .btn{background:var(--brown); color:var(--cream); padding:12px 18px; border-radius:10px; font-weight:700; box-shadow:0 6px 18px rgba(0,0,0,0.08); border:none; cursor:pointer}
+    .btn.outline{background:transparent; color:var(--brown); border:2px solid rgba(255,255,255,0.18)}
+
+    .hero-visual{background:linear-gradient(180deg,var(--beige),#fff); min-height:260px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+    .hero-visual img{max-width:88%; height:auto;}
+
+    /* Features */
+    .features{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:26px 0}
+    .card{background:var(--cream); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.03); text-align:left}
+    .icon{width:56px; height:56px; border-radius:10px; display:inline-grid; place-items:center; background:rgba(168,187,163,0.12); color:var(--green); font-weight:700}
+    .card h3{margin:12px 0 6px; color:var(--brown)}
+    .card p{margin:0; font-size:14px; color:#444}
+
+    /* Testimonials */
+    .testimonials{background:var(--beige); padding:28px; border-radius:14px; margin:28px 0}
+    .testimonials .wrap{display:flex; gap:16px; overflow:hidden}
+    .tcard{background:#fff; padding:18px; border-radius:12px; min-width:280px; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .tcard p{font-style:italic; margin:0 0 10px}
+    .tcard span{font-weight:700; color:var(--brown)}
+
+    /* CTA strip */
+    .strip{background:var(--green); padding:28px; border-radius:12px; display:flex; align-items:center; justify-content:space-between; margin:24px 0}
+    .strip .left strong{display:block; font-size:18px; color:var(--brown)}
+    .whatsapp{background:#fff; color:var(--green); padding:12px 16px; border-radius:10px; display:inline-flex; gap:10px; align-items:center; font-weight:700}
+
+    /* Footer */
+    footer{background:var(--brown); color:var(--cream); padding:26px; border-radius:12px}
+    .foot-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px}
+    .subscribe input{padding:10px; border-radius:8px; border:0; width:70%; margin-right:10px}
+    .subscribe button{padding:10px 12px; border-radius:8px; border:0; background:var(--beige); color:var(--brown); font-weight:700}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .features{grid-template-columns:repeat(2,1fr)}
+      .hero{grid-template-columns:1fr}
+      .hero-visual{order:-1}
+      .topbar{gap:10px}
+    }
+    @media (max-width:600px){
+      .features{grid-template-columns:1fr}
+      .foot-grid{grid-template-columns:1fr}
+      .brand .logo{width:48px;height:48px}
+      .hero h1{font-size:22px}
+    }
+
+    /* Small animations */
+    .fade-up{transform:translateY(18px); opacity:0; transition:all 600ms ease}
+    .fade-up.in{transform:none; opacity:1}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        
+        <img src="logo.jpeg" alt="Arogya hero placeholder" width="50px">
+        <div>
+          <div style="font-weight:700;color:var(--brown)">AROGYA</div>
+          <div style="font-size:12px;color:#6a6a6a">Ayurveda Nutrition</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#prakriti">Check Prakriti</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="btn">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Welcome to Arogya — Your Partner in Ayurveda-Focused Nutrition</h1>
+        <p>Assess prakriti, analyze diets, and create personalized nutrition plans backed by Ayurvedic wisdom and modern nutrient analysis.</p>
+        <div class="cta">
+          <button class="btn">Get Your Customized Plan</button>
+          <button class="btn outline">Learn More</button>
+        </div>
+
+        <div style="margin-top:22px;">
+          <small style="color:#3a3a3a; font-weight:600">Key features:</small>
+          <div style="display:flex; gap:12px; margin-top:8px; flex-wrap:wrap">
+            <div style="background:#fff; padding:8px 12px; border-radius:9px; box-shadow:0 6px 18px rgba(0,0,0,0.03)">Check Prakriti</div>
+            <div style="background:#fff; padding:8px 12px; border-radius:9px; box-shadow:0 6px 18px rgba(0,0,0,0.03)">Diet Analysis</div>
+            <div style="background:#fff; padding:8px 12px; border-radius:9px; box-shadow:0 6px 18px rgba(0,0,0,0.03)">Connect with Doctors</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Replace with your 3D illustration or hero image -->
+        <img src="headerimg.jpeg" alt="Arogya hero placeholder">
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="card fade-up">
+        
+        <h3>Check Prakriti</h3>
+        <img src="WhatsApp Image 2025-09-19 at 10.56.27 PM.jpeg" alt="Arogya hero placeholder" width="50px">
+        <p>Quick questionnaire to determine body constitution and imbalances.</p>
+      </div>
+      <div class="card fade-up">
+        
+        <h3>Diet Analysis</h3>
+        <img src="WhatsApp Image 2025-09-19 at 10.56.29 PM.jpeg" alt="Arogya hero placeholder" width="50px">
+        <p>Nutrient breakdown and suggestions based on Ayurvedic & modern nutrition.</p>
+      </div>
+      <div class="card fade-up">
+        
+        <h3>Disease-specific Plans</h3>
+        <img src="WhatsApp Image 2025-09-19 at 10.56.34 PM.jpeg" alt="Arogya hero placeholder" width="50px">
+        <p>Tailored diets to support chronic conditions and recovery.</p>
+      </div>
+      <div class="card fade-up">
+        
+        <h3>Connect with Experts</h3>
+        <img src="WhatsApp Image 2025-09-19 at 10.56.35 PM (1).jpeg" alt="Arogya hero placeholder" width="50px">
+        <p>Schedule video, voice or chat consultations with certified Ayurvedic doctors.</p>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px">
+        <h3 style="margin:0; color:var(--brown)">What users say</h3>
+        <small style="color:#6a6a6a">Real stories from users</small>
+      </div>
+
+      <div class="wrap" id="tWrap">
+        <div class="tcard">
+          <p>"Arogya helped me understand my prakriti and design a diet that keeps me energized and balanced every day."</p>
+          <span>— Priya S.</span>
+        </div>
+        <div class="tcard">
+          <p>"Connecting with an Ayurvedic doctor through video calls and getting instant support via voice and chat made my journey smooth and reassuring."</p>
+          <span>— Ananya R.</span>
+        </div>
+        <div class="tcard">
+          <p>"As a busy professional, Arogya’s insights simplified my diet choices and improved my overall well-being."</p>
+          <span>— Rohan K.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="left">
+        <strong>Have questions? Connect instantly on WhatsApp</strong>
+        <div style="color:#3a3a3a; margin-top:6px">Get quick answers from our team or book a consult.</div>
+      </div>
+      <div>
+        <a class="whatsapp" href="#">💬 Chat on WhatsApp</a>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <div style="display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start">
+        <div style="flex:1; min-width:260px">
+          <h3 style="color:var(--brown)">Get your personalized plan</h3>
+          <p>Leave your details and we'll get back with a plan aligned to your prakriti and goals.</p>
+          <form style="display:flex; flex-direction:column; gap:8px; max-width:420px">
+            <input placeholder="Full name" style="padding:12px;border-radius:8px;border:1px solid #e8e8e8">
+            <input placeholder="Email" style="padding:12px;border-radius:8px;border:1px solid #e8e8e8">
+            <input placeholder="Phone (optional)" style="padding:12px;border-radius:8px;border:1px solid #e8e8e8">
+            <button class="btn" type="button">Request Plan</button>
+          </form>
+        </div>
+
+        <div style="flex:1; min-width:260px">
+          <h3 style="color:var(--brown)">Quick links</h3>
+          <ul style="padding-left:18px; color:#444">
+            <li>How it works</li>
+            <li>Pricing</li>
+            <li>Doctor network</li>
+            <li>Privacy & Security</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="subscribe">
+          <div style="font-weight:700; margin-bottom:8px">Subscribe to updates</div>
+          <div style="display:flex; align-items:center">
+            <input placeholder="Your email">
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px">Contact</div>
+          <div>agrogya@juitsolan.in</div>
+          <div>+91 6996 7777 00</div>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px">Follow</div>
+          <div style="display:flex; gap:10px; margin-top:8px">[FB] [IG] [YT]</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:18px; opacity:0.9">© <strong>Arogya</strong> — Ayurveda-Focused Nutrition</div>
+    </div>
+  </footer>
+
+  <script>
+    // tiny scroll reveal for fade-up elements
+    function reveal(){
+      document.querySelectorAll('.fade-up').forEach(el=>{
+        const r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight - 80) el.classList.add('in');
+      })
+    }
+    window.addEventListener('scroll', reveal); window.addEventListener('load', reveal);
+
+    // simple auto-scroll testimonials
+    (function(){
+      const wrap = document.getElementById('tWrap');
+      let idx=0;
+      setInterval(()=>{
+        idx = (idx+1) % 3;
+        wrap.style.transform = `translateX(-${idx*308}px)`;
+        wrap.style.transition = 'transform 600ms ease';
+      },4000);
+    })();
+  </script>
+</body>
+</html>
